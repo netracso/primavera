@@ -20,6 +20,21 @@ public class PrimaveraApplication implements CommandLineRunner{ //
      
         System.out.println("Hola Mundo");
         //repPagos.servicioPagar();
-       repMensa.save(new Mensajito("hola" ,"puerco",LocalDate.now()));
+       // GUARDA UN MENSAJE EN MONGODB
+       //repMensa.save(new Mensajito("MALO" ,"MAL",LocalDate.now()));
+       //BUSCAMOS TODOS LOS MENSAJES
+       //for(Mensajito mensa: repMensa.findAll()){ //findAll() nos regresa un arreglo de mensajes
+         // System.out.println(mensa);
+       
+      //}
+    //buscamos por id
+      //  System.out.println(repMensa.findById("5bb4224200d6441d94e39866").get());
+    //BUSCANDO POR TITULO     
+  //repMensa.save(new Mensajito("malo", "yo", "racso",LocalDate.now()));  
+    //System.out.println(repMensa.findByTtitulo("YO");
+        
+        repMensa.deleteById(Mensajito.get());
+        
     }
 }
+//JSON--> 

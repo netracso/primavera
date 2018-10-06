@@ -1,8 +1,4 @@
-/*  
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package unitec.primavera;
 
 import java.time.LocalDate;
@@ -19,8 +15,13 @@ public class Mensajito {
    private String titulo;
    private String cuerpo;
    private LocalDate fecha;
-
+   
     public Mensajito() {
+    }
+
+    @Override
+    public String toString() {
+        return "Mensajito{" + "id=" + id + ", titulo=" + titulo + ", cuerpo=" + cuerpo + ", fecha=" + fecha + '}';
     }
 
     public Mensajito(String titulo, String cuerpo, LocalDate fecha) {
@@ -60,5 +61,13 @@ public class Mensajito {
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
-           
+
+    public Mensajito(String id, String titulo, String cuerpo, LocalDate fecha) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        this.fecha = fecha;
+    }
+ 
+    
 }
