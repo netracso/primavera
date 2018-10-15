@@ -10,5 +10,4 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface PepositoriosMensajes extends MongoRepository<Mensajito,String> {
     ArrayList<Mensajito> findByTtitulo(String titulo);
-           
 }

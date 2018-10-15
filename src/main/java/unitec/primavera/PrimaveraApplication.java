@@ -10,14 +10,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PrimaveraApplication implements CommandLineRunner{ //
         //@Autowired Hace la inyección de independencias
 @Autowired RepositorioPagos repPagos;	
-@Autowired PepositoriosMensajes repMensa; 	//repositorio de todas las operaciones
-    public static void main(String[] args) {
+@Autowired PepositoriosMensajes repMensa; //repositorio de todas las operaciones
+@Autowired PepositoriosMensajes repoElimina;    
+public static void main(String[] args) {
 		SpringApplication.run(PrimaveraApplication.class, args);        
 	}
 
     @Override
     public void run(String... args) throws Exception {
      
+        
         System.out.println("Hola Mundo");
         //repPagos.servicioPagar();
        // GUARDA UN MENSAJE EN MONGODB
@@ -30,11 +32,13 @@ public class PrimaveraApplication implements CommandLineRunner{ //
     //buscamos por id
       //  System.out.println(repMensa.findById("5bb4224200d6441d94e39866").get());
     //BUSCANDO POR TITULO     
-  //repMensa.save(new Mensajito("malo", "yo", "racso",LocalDate.now()));  
-    //System.out.println(repMensa.findByTtitulo("YO");
-        
-        repMensa.deleteById(Mensajito.get());
-        
+  repMensa.save(new Mensajito("malo", "yo", "racso",LocalDate.now()));  
+    System.out.println(repMensa.findByTtitulo("YO"));
+       // repMensa.deleteById(id);
+        //repMensa.deleteById(Mensajito.get(id));
+        //Eliminando Registro
+        Mensajito m= repoElimina.findByTtitulo("YO").get(0);
+        repoElimina.delete(m);
     }
 }
 //JSON--> 
